@@ -1,8 +1,6 @@
-# Node Modules
-/node_modules
+# Folders to ignore
+.idea
+node_modules
+build
 
-# Distribution
-/dist
-
-#IDE settings
-/.idea
+package-lock.json
