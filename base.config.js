@@ -1,6 +1,6 @@
 const { merge } = require('webpack-merge');
 
-const paths = require('./configs/paths');
+const routes = require('./configs/routes');
 const scss = require('./configs/scss');
 const pug = require('./configs/pug');
 const images = require('./configs/images');
@@ -8,18 +8,19 @@ const fonts = require('./configs/fonts');
 const js = require('./configs/js');
 const { isDev } = require('./helpers/env');
 
-module.exports = () => {
+module.exports = (env) => {
     const plugins = pug.generateHtmlPlugins();
     plugins.push(scss.cssExtractPlugin);
 
     const config = {
+        mode: env.WEBPACK_SERVE ? 'development' : 'production',
         performance: {
             hints: false,
         },
-        entry: paths.entry,
+        entry: routes.entry,
         output: {
-            path: paths.build,
-            publicPath: isDev() ? '/' : ``,
+            path: routes.build,
+            publicPath: isDev ? '/' : ``,
         },
         module: {
             rules: [
@@ -35,7 +36,7 @@ module.exports = () => {
 
     return merge(
         config,
-        isDev() ?
+        isDev ?
             require('./dev.config') :
             require('./build.config')
     );

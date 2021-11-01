@@ -2,7 +2,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 const PATH = require('path');
 
-const paths = require('./paths');
+const routes = require('./routes');
 
 const minify = {
     removeComments: false,
@@ -15,13 +15,13 @@ const useMinify = () => {
 }
 
 const generateHtmlPlugins = () => {
-    return glob.sync(PATH.resolve(paths.html, '*.pug')).map(item => {
+    return glob.sync(PATH.resolve(routes.html, '*.pug')).map(item => {
         const extension = PATH.extname(item)
         const name = PATH.basename(item, extension)
 
         return new HtmlPlugin({
             filename: `${name}.html`,
-            template: PATH.resolve(paths.html, item),
+            template: PATH.resolve(routes.html, item),
             inject: true,
             minify: useMinify() ? minify : {}
         });
