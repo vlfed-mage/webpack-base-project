@@ -1,11 +1,30 @@
-module.exports = {
-    test: /\.s[ac]ss$/,
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports.cssExtractPlugin = new MiniCssExtractPlugin({
+    filename: `css/[name].css`
+});
+
+module.exports.loader = {
+    test: /\.scss$/,
     use: [
-        // Creates `style` nodes from JS strings
-        "style-loader",
-        // Translates CSS into CommonJS
-        "css-loader",
-        // Compiles Sass to CSS
-        "sass-loader",
-    ],
+        'style-loader',
+        {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+                esModule: false,
+            },
+        },
+        {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+        },
+        {
+            loader: 'postcss-loader',
+            options: { sourceMap: true }
+        },
+        {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+        }
+    ]
 };

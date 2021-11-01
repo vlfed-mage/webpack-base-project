@@ -7,6 +7,10 @@
     "start": "webpack serve --config base.config.js --env NODE_ENV=development",
     "build": "webpack --config base.config.js --env NODE_ENV=production"
   },
+  "browserslist": [
+    "> 3%",
+    "last 3 version"
+  ],
   "author": "Vlad Fedorov",
   "license": "MIT",
   "devDependencies": {
@@ -15,12 +19,17 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.3.7",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^5.0.8",
     "glob": "^7.2.0",
     "html-loader": "^3.0.0",
     "html-webpack-plugin": "^5.4.0",
+    "mini-css-extract-plugin": "^2.4.3",
     "path": "^0.12.7",
+    "postcss-loader": "^6.2.0",
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",
     "sass": "^1.43.3",
