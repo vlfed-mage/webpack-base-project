@@ -5,7 +5,7 @@ const scss = require('./configs/scss');
 const pug = require('./configs/pug');
 const images = require('./configs/images');
 const fonts = require('./configs/fonts');
-
+const js = require('./configs/js');
 const { isDev } = require('./helpers/env');
 
 module.exports = () => {
@@ -13,6 +13,9 @@ module.exports = () => {
     plugins.push(scss.cssExtractPlugin);
 
     const config = {
+        performance: {
+            hints: false,
+        },
         entry: paths.entry,
         output: {
             path: paths.build,
@@ -20,6 +23,7 @@ module.exports = () => {
         },
         module: {
             rules: [
+                js.loader,
                 scss.loader,
                 pug.loader,
                 images.loader,
