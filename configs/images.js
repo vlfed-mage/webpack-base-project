@@ -1,6 +1,6 @@
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
-const { fileName } = require('../helpers/file');
+const { isDev } = require('../helpers/env');
 
 module.exports.imageMinPlugin = new ImageMinimizerPlugin({
 
@@ -26,6 +26,6 @@ module.exports.loader = {
     exclude: /[\\/]node_modules[\\/]/,
     type: 'asset/resource',
     generator: {
-        filename: `[path]${fileName}`,
+        filename: `[path][name]${ isDev ? '.[hash:8]' : '' }[ext]`,
     },
 };
