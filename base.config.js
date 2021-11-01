@@ -11,6 +11,7 @@ const { isDev } = require('./helpers/env');
 module.exports = (env) => {
     const plugins = pug.generateHtmlPlugins();
     plugins.push(scss.cssExtractPlugin);
+    plugins.push(pug.beautifyHtml);
 
     const config = {
         mode: env.WEBPACK_SERVE ? 'development' : 'production',
