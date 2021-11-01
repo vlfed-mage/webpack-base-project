@@ -31,6 +31,7 @@ const generateHtmlPlugins = () => {
 module.exports.generateHtmlPlugins = generateHtmlPlugins;
 module.exports.loader = {
     test: /\.pug$/,
+    exclude: /[\\/]node_modules[\\/]/,
     use: [
         'html-loader',
         'pug-html-loader'

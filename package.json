@@ -4,8 +4,8 @@
   "description": "Webpack 5 boilerplate for booking frontend app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config base.config.js --env NODE_ENV=development",
-    "build": "webpack --config base.config.js --env NODE_ENV=production"
+    "start": "webpack serve --config base.config.js",
+    "build": "export NODE_ENV=production&& webpack --config base.config.js"
   },
   "browserslist": [
     "> 3%",
@@ -32,6 +32,7 @@
     "postcss-loader": "^6.2.0",
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",
+    "resolve-url-loader": "^4.0.0",
     "sass": "^1.43.3",
     "sass-loader": "^12.2.0",
     "style-loader": "^3.3.1",
