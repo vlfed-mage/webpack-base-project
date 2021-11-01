@@ -1,8 +1,9 @@
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const images = require('./configs/images');
 
 const plugins = [images.imageMinPlugin];
+plugins.push(new CleanWebpackPlugin());
 
 module.exports = {
     mode: 'production',
