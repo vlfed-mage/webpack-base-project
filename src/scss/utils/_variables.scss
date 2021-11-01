@@ -1,3 +1,5 @@
+@use "sass:math";
+
 //== Colors
 
 $base:                  #fff !default;
@@ -44,6 +46,8 @@ $fontSize24:            24px !default;
 $fontSize21:            21px !default;
 $fontSize12:            12px !default;
 $fontSize10:            10px !default;
+
+$lineHeightBase:        math.div(18, 12) !default;
 
 
 //== Media queries breakpoints
