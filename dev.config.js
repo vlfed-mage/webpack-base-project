@@ -1,10 +1,9 @@
 const webpack = require('webpack');
-const paths = require('./configs/paths');
+const routes = require('./configs/routes');
 
 module.exports = {
-    mode: 'development',
     devServer: {
-        contentBase: paths.build,
+        contentBase: routes.build,
         compress: true,
         hot: true,
         open: true,

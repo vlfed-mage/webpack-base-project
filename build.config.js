@@ -7,7 +7,6 @@ const plugins = [images.imageMinPlugin];
 plugins.push(new CleanWebpackPlugin());
 
 module.exports = {
-    mode: 'production',
     target: 'web',
     performance: {
         maxAssetSize: 500000
