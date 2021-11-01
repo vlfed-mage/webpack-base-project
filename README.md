@@ -14,7 +14,7 @@ Clone this repo and then in command line type:
 ## I've used the latest version of node.js so far:
 
   ```json
-   "node.js": "17.0.1"
+   "node": "17.0.1"
   ```
 
 ## How to start
