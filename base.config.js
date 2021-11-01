@@ -7,6 +7,7 @@ const { isDev } = require('./helpers/env');
 
 module.exports = () => {
     const plugins = pug.generateHtmlPlugins();
+    plugins.push(scss.cssExtractPlugin);
 
     const config = {
         entry: paths.entry,
@@ -15,7 +16,7 @@ module.exports = () => {
         },
         module: {
             rules: [
-                scss,
+                scss.loader,
                 pug.loader,
             ]
         },

@@ -1,6 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const glob = require('glob');
-const path = require('path');
+const PATH = require('path');
 
 const paths = require('./paths');
 
@@ -15,13 +15,13 @@ const useMinify = () => {
 }
 
 const generateHtmlPlugins = () => {
-    return glob.sync(path.resolve(paths.html, '*.pug')).map(item => {
-        const extension = path.extname(item)
-        const name = path.basename(item, extension)
+    return glob.sync(PATH.resolve(paths.html, '*.pug')).map(item => {
+        const extension = PATH.extname(item)
+        const name = PATH.basename(item, extension)
 
         return new HtmlPlugin({
             filename: `${name}.html`,
-            template: path.resolve(paths.html, item),
+            template: PATH.resolve(paths.html, item),
             inject: true,
             minify: useMinify() ? minify : {}
         });
@@ -36,4 +36,3 @@ module.exports.loader = {
         'pug-html-loader'
     ],
 };
-
