@@ -1,12 +1,12 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 const paths = require('./configs/paths');
 const scss = require('./configs/scss');
 const pug = require('./configs/pug');
 const { isDev } = require('./helpers/env');
 
-module.exports = options => {
-    process.env.NODE_ENV = options?.NODE_ENV;
+module.exports = () => {
+    const plugins = pug.generateHtmlPlugins();
 
     const config = {
         entry: paths.entry,
@@ -16,9 +16,10 @@ module.exports = options => {
         module: {
             rules: [
                 scss,
-                pug,
+                pug.loader,
             ]
-        }
+        },
+        plugins,
     };
 
     return merge(
