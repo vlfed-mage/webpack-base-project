@@ -1,3 +1,7 @@
+# Webpack 5 boilerplate
+
+![NODE Version Support](https://img.shields.io/node/v-lts/webpack?style=for-the-badge)
+
 ## How to use
 
 You can use [npm scripts](https://docs.npmjs.com/misc/scripts):
