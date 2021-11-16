@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 
 export default class App extends Component {
 	render() {
-		return (
-			<div className= 'react__app'>
-				test react
-			</div>
-		)
+		return pug`
+			.react__app test react
+		`
 	}
 }
