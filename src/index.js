@@ -1,5 +1,11 @@
-import './scss/main.scss'
+import './scss/main.scss';
 
-const sum = (a, b) => a + b;
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log(sum(3, 8));
+import App from "./components/app";
+
+ReactDOM.render(
+	<App />,
+	document.getElementById('todo')
+);
