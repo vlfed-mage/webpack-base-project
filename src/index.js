@@ -1,11 +1,15 @@
 import './scss/main.scss';
 
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import App from "./components/app";
 
 ReactDOM.render(
-	<App />,
+	<StrictMode>
+		<App />
+	</StrictMode>,
 	document.getElementById('root')
 );
+
+module?.hot.accept();
