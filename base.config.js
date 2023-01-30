@@ -14,6 +14,7 @@ module.exports = (env) => {
     plugins.push(pug.beautifyHtml);
 
     const config = {
+        devtool: 'source-map',
         mode: env.WEBPACK_SERVE ? 'development' : 'production',
         performance: {
             hints: false,
