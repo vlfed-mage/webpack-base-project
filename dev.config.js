@@ -11,6 +11,7 @@ module.exports = {
         historyApiFallback: true, // https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.SourceMapDevToolPlugin({
             filename: "[file].map"
         })
