@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import { css } from '@emotion/css';
+import './app.scss'
 
 const appStyles = css`
     margin: 50px auto;
@@ -19,7 +20,7 @@ export default class App extends Component {
     render() {
         return (
             <div className={ appStyles }>
-                sample1
+                <span className='test-node-sass'>sample1</span>
             </div>
         );
 
